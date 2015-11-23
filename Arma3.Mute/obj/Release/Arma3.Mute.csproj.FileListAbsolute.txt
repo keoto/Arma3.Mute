@@ -1,0 +1,11 @@
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\bin\Release\Arma3.Mute.exe.config
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\bin\Release\Arma3.Mute.exe
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\bin\Release\Arma3.Mute.pdb
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\bin\Release\CoreAudio.dll
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\bin\Release\CoreAudio.pdb
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\obj\Release\Arma3.Mute.csprojResolveAssemblyReference.cache
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\obj\Release\Arma3.Mute.Form1.resources
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\obj\Release\Arma3.Mute.Properties.Resources.resources
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\obj\Release\Arma3.Mute.csproj.GenerateResource.Cache
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\obj\Release\Arma3.Mute.exe
+C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\CoreAudio\Arma3.Mute\obj\Release\Arma3.Mute.pdb
