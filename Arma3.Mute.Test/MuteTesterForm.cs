@@ -33,6 +33,11 @@ namespace Arma3.Mute.Test
             bool state = SresgaminG.Arma3.Mute.IsMuted(MuteAppName.Text);
 
             buttonMute.Text = (state ? "Unmute" : "Mute");
+
+            List<string> audioApps = SresgaminG.Arma3.Mute.GetListOfApplicationsWithAudio();
+
+            foreach (string audioApp in audioApps)
+                listAudioApplications.Items.Add(audioApp);
         }
     }
 }

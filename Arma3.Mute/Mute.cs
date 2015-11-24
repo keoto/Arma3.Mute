@@ -49,6 +49,26 @@ namespace SresgaminG.Arma3
             }
         }
 
+        public static List<string> GetListOfApplicationsWithAudio()
+        {
+            List<string> results = new List<string>();
+
+            EDataFlow flow = new EDataFlow();
+            MMDeviceEnumerator deviceEnum = new MMDeviceEnumerator();
+
+            devCol = deviceEnum.EnumerateAudioEndPoints(flow, DEVICE_STATE.DEVICE_STATE_ACTIVE);
+
+            for (int devIdx = 0; devIdx < devCol.Count; devIdx++)
+            {
+                for (int sesIdx = 0; sesIdx < devCol[devIdx].AudioSessionManager2.Sessions.Count; sesIdx++)
+                {
+                    results.Add(devCol[devIdx].AudioSessionManager2.Sessions[sesIdx].GetSessionIdentifier);
+                }
+            }
+
+            return results;
+        }
+
         public static bool IsMuted(string appName)
         {
             FindApplication(appName);

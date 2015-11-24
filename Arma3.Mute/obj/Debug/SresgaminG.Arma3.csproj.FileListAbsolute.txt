@@ -15,3 +15,11 @@ C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\Sresgaming.Arma3\Arma
 C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\Sresgaming.Arma3\Arma3.Mute\obj\Debug\SresgaminG.Arma3.csproj.GenerateResource.Cache
 C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\Sresgaming.Arma3\Arma3.Mute\obj\Debug\SresgaminG.Arma3.dll
 C:\Users\paul.talbot\Documents\Visual Studio 2013\Projects\Sresgaming.Arma3\Arma3.Mute\obj\Debug\SresgaminG.Arma3.pdb
+C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute\bin\Debug\SresgaminG.Arma3.dll
+C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute\bin\Debug\SresgaminG.Arma3.pdb
+C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute\bin\Debug\CoreAudio.dll
+C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute\obj\Debug\SresgaminG.Arma3.csprojResolveAssemblyReference.cache
+C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute\obj\Debug\SresgaminG.Arma3.Properties.Resources.resources
+C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute\obj\Debug\SresgaminG.Arma3.csproj.GenerateResource.Cache
+C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute\obj\Debug\SresgaminG.Arma3.dll
+C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute\obj\Debug\SresgaminG.Arma3.pdb
