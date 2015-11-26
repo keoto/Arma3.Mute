@@ -6,46 +6,51 @@ using CoreAudio;
 
 namespace SresgaminG.Arma3
 {
-    public static class Mute
+    public class Mute
     {
         private static MMDeviceCollection devCol;
 
-        private static Int32 devIndex = -1;
-        private static Int32 sesIndex = -1;
+        private static List<KeyValuePair<int, int>> devicesAndSessions = new List<KeyValuePair<int, int>>();
 
-        public enum State
+        public static void MuteUnmute(string appName)
         {
-            Muted = 0,
-            Unmuted = 1
-        }
+            devicesAndSessions.Clear();
 
-        public static State MuteUnmute(string appName)
-        {
             FindApplication(appName);
 
-            if (devCol[devIndex].AudioSessionManager2.Sessions[sesIndex].GetSessionIdentifier.Contains(appName))
-            {
-                try
-                {
-                    devCol[devIndex].AudioSessionManager2.Sessions[sesIndex].SimpleAudioVolume.Mute = !devCol[devIndex].AudioSessionManager2.Sessions[sesIndex].SimpleAudioVolume.Mute;
-                }
-                catch (Exception ex)
-                {
-
-                }
-            }
-
-            return ToMuteState(devCol[devIndex].AudioSessionManager2.Sessions[sesIndex].SimpleAudioVolume.Mute);
+            foreach (KeyValuePair<int,int> ds in devicesAndSessions)
+                devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.Mute = !devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.Mute;
         }
 
-        public static State ToMuteState(bool value)
+        public static void VolumeUp(string appName)
         {
-            switch (value)
+            devicesAndSessions.Clear();
+
+            FindApplication(appName);
+
+            foreach (KeyValuePair<int, int> ds in devicesAndSessions)
             {
-                case true:
-                    return State.Muted;
-                default:
-                    return State.Unmuted;
+                if (devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.MasterVolume == 1f) break;
+                if (devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.MasterVolume > 0.9f)
+                    devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.MasterVolume = 1f;
+                else
+                    devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.MasterVolume += 0.1f;
+            }
+        }
+
+        public static void VolumeDown(string appName)
+        {
+            devicesAndSessions.Clear();
+
+            FindApplication(appName);
+
+            foreach (KeyValuePair<int, int> ds in devicesAndSessions)
+            {
+                if (devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.MasterVolume == 0f) break;
+                if (devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.MasterVolume < 0.1f)
+                    devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.MasterVolume = 0.0f;
+                else
+                    devCol[ds.Key].AudioSessionManager2.Sessions[ds.Value].SimpleAudioVolume.MasterVolume -= 0.1f;
             }
         }
 
@@ -69,16 +74,6 @@ namespace SresgaminG.Arma3
             return results;
         }
 
-        public static bool IsMuted(string appName)
-        {
-            FindApplication(appName);
-
-            if (devCol[devIndex].AudioSessionManager2.Sessions[sesIndex].GetSessionIdentifier.Contains(appName))
-                return devCol[devIndex].AudioSessionManager2.Sessions[sesIndex].SimpleAudioVolume.Mute;
-
-            throw new Exception("Application is not running or could not find");
-        }
-
         private static void FindApplication(string appName)
         {
             EDataFlow flow = new EDataFlow();
@@ -91,10 +86,7 @@ namespace SresgaminG.Arma3
                 for (int sesIdx = 0; sesIdx < devCol[devIdx].AudioSessionManager2.Sessions.Count; sesIdx++)
                 {
                     if (devCol[devIdx].AudioSessionManager2.Sessions[sesIdx].GetSessionIdentifier.Contains(appName))
-                    {
-                        devIndex = devIdx;
-                        sesIndex = sesIdx;
-                    }
+                        devicesAndSessions.Add(new KeyValuePair<int, int>(devIdx, sesIdx));
                 }
             }
         }

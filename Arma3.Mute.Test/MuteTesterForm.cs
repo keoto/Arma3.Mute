@@ -18,26 +18,36 @@ namespace Arma3.Mute.Test
 
         private void OnClickMute(object sender, EventArgs e)
         {
-            SresgaminG.Arma3.Mute.State muteState = SresgaminG.Arma3.Mute.MuteUnmute(MuteAppName.Text);
-
-            buttonMute.Text = (muteState ==  SresgaminG.Arma3.Mute.State.Muted ? "Unmute" : "Mute");
-        }
-
-        private void OnClickIsMuted(object sender, EventArgs e)
-        {
-            MessageBox.Show(this, string.Format("{0} is {1}", MuteAppName.Text, (SresgaminG.Arma3.Mute.IsMuted(MuteAppName.Text)) ? "muted" : "not muted"), "How Interesting", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SresgaminG.Arma3.Mute.MuteUnmute(MuteAppName.Text);
         }
 
         private void OnShown(object sender, EventArgs e)
         {
-            bool state = SresgaminG.Arma3.Mute.IsMuted(MuteAppName.Text);
+            RefreshList();
+        }
 
-            buttonMute.Text = (state ? "Unmute" : "Mute");
+        private void OnClickRefresh(object sender, EventArgs e)
+        {
+            RefreshList();
+        }
 
+        private void RefreshList()
+        {
             List<string> audioApps = SresgaminG.Arma3.Mute.GetListOfApplicationsWithAudio();
 
+            listAudioApplications.Items.Clear();
             foreach (string audioApp in audioApps)
                 listAudioApplications.Items.Add(audioApp);
+        }
+
+        private void OnClickVolumeUp(object sender, EventArgs e)
+        {
+            SresgaminG.Arma3.Mute.VolumeUp(MuteAppName.Text);
+        }
+
+        private void OnVolumeDown(object sender, EventArgs e)
+        {
+            SresgaminG.Arma3.Mute.VolumeDown(MuteAppName.Text);
         }
     }
 }
