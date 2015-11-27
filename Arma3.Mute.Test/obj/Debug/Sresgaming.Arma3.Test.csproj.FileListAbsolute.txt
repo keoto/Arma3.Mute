@@ -37,3 +37,4 @@ C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute.Test\bin\Debug\Sresg
 C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute.Test\bin\Debug\CoreAudio.dll
 C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute.Test\bin\Debug\SresgaminG.Arma3.pdb
 C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute.Test\bin\Debug\CoreAudio.pdb
+C:\Users\paul.talbot\Documents\GitHub\Arma3.Mute\Arma3.Mute.Test\bin\Debug\Gma.System.MouseKeyHook.dll

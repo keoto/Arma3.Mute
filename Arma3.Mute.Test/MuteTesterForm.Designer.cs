@@ -35,6 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buttonVolumeUp = new System.Windows.Forms.Button();
             this.buttonVolumeDown = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonMute
@@ -106,11 +107,21 @@
             this.buttonVolumeDown.UseVisualStyleBackColor = true;
             this.buttonVolumeDown.Click += new System.EventHandler(this.OnVolumeDown);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(174, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(226, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Press \'F1\' Key from any where to mute/unmute";
+            // 
             // MuteTesterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 277);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LabelListOfAudioApplications);
             this.Controls.Add(this.listAudioApplications);
             this.Controls.Add(this.MuteAppName);
@@ -139,6 +150,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonVolumeUp;
         private System.Windows.Forms.Button buttonVolumeDown;
+        private System.Windows.Forms.Label label1;
     }
 }
 
